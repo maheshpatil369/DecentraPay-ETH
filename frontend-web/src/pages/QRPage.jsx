@@ -16,9 +16,7 @@ export default function QRPage() {
 
   const qrValue = JSON.stringify({
     app: 'decentrapay',
-    username:      user?.username,
-    walletAddress: user?.walletAddress,
-    name:          user?.fullName,
+    username: user?.username,
   });
 
   const startScan = async () => {
@@ -110,9 +108,7 @@ export default function QRPage() {
               <div className="w-14 h-14 rounded-full border-2 border-dp-success bg-dp-success/10 flex items-center justify-center text-xl text-dp-success">✓</div>
               {scanned.username ? (
                 <>
-                  <p className="text-lg font-display font-bold">{scanned.name}</p>
                   <p className="text-dp-accent font-semibold">@{scanned.username}</p>
-                  <p className="font-mono text-[0.72rem] text-dp-text3 break-all">{scanned.walletAddress}</p>
                   <a href={`/send?to=${scanned.username}`} className="btn-primary w-full">Send Payment →</a>
                 </>
               ) : (

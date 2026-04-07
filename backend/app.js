@@ -54,6 +54,7 @@ app.use('/api/auth',     require('./routes/authRoutes'));
 app.use('/api/users',    require('./routes/userRoutes'));
 app.use('/api/payment',  require('./routes/paymentRoutes'));
 app.use('/api/payments', require('./routes/paymentsRoutes'));
+app.use('/api/qr',       require('./routes/qrRoutes'));
 app.use('/api/security', require('./routes/securityRoutes'));
 
 // ── Health Check ──────────────────────────────────────────────────────

@@ -49,6 +49,11 @@ export const paymentsAPI = {
   send: (data) => api.post('/payments/send', data),
 };
 
+export const qrAPI = {
+  validate: (qrData) => api.post('/qr/validate', { qrData }),
+  resolveUser: (username) => api.post('/qr/resolve-user', { username }),
+};
+
 export const securityAPI = {
   verifyPin: (pin) => api.post('/security/verify-pin', { pin }),
   setPin:    (pin) => api.post('/security/set-pin',    { pin }),
