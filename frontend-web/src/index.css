@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a1a;
+    color: #f0f0ff;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5 { font-family: 'Syne', sans-serif; }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0a0a1a; }
+  ::-webkit-scrollbar-thumb { background: #1a1a38; border-radius: 99px; }
+}
+
+@layer components {
+  .card {
+    @apply bg-dp-surface border border-white/[0.07] rounded-[22px] p-7 shadow-card;
+  }
+
+  .btn-primary {
+    @apply flex items-center justify-center gap-2 px-6 py-3 rounded-[14px]
+           bg-dp-accent text-white font-semibold text-sm
+           shadow-glow-sm hover:bg-violet-500 transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply flex items-center justify-center gap-2 px-6 py-3 rounded-[14px]
+           bg-dp-bg3 text-dp-text border border-white/[0.07] font-semibold text-sm
+           hover:bg-dp-bg2 transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-success {
+    @apply flex items-center justify-center gap-2 px-6 py-3 rounded-[14px]
+           bg-dp-success text-black font-bold text-sm
+           hover:opacity-90 transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-danger {
+    @apply flex items-center justify-center gap-2 px-6 py-3 rounded-[14px]
+           bg-dp-danger text-white font-semibold text-sm
+           hover:opacity-90 transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full bg-dp-bg2 border border-white/[0.07] rounded-[14px]
+           px-4 py-3 text-dp-text text-sm placeholder-dp-text3
+           outline-none focus:border-dp-accent transition-colors duration-200;
+  }
+
+  .input-label {
+    @apply text-[11px] font-bold text-dp-text2 uppercase tracking-wider mb-1.5 block;
+  }
+
+  .badge-success {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide
+           bg-dp-success/10 text-dp-success;
+  }
+
+  .badge-danger {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide
+           bg-dp-danger/10 text-dp-danger;
+  }
+
+  .badge-accent {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide
+           bg-dp-accent/10 text-dp-accent;
+  }
+
+  .fade-up { animation: fadeUp 0.4s ease forwards; }
+
+  .spinner {
+    @apply inline-block w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin;
+  }
+
+  .spinner-accent {
+    @apply inline-block w-5 h-5 border-2 border-dp-accent/20 border-t-dp-accent rounded-full animate-spin;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* React-Toastify dark overrides */
+.Toastify__toast { background: #16163a !important; color: #f0f0ff !important; border: 1px solid rgba(255,255,255,0.07) !important; border-radius: 14px !important; }
+.Toastify__progress-bar { background: #6c63ff !important; }
+.Toastify__close-button { color: #9999cc !important; }

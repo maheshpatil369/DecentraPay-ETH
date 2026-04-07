@@ -1,0 +1,6 @@
+{
+  "testEnvironment": "node",
+  "testTimeout": 20000,
+  "verbose": true,
+  "setupFiles": ["<rootDir>/tests/setup.js"]
+}
